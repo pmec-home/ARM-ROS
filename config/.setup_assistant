@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/eduardo/athome/arm/catkin_ws/src/roboga_arm/config/arm.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: test_robot.srdf
+  CONFIG:
+    author_name: Dmitry
+    author_email: dmitrywat@gmail.com
+    generated_timestamp: 1541604510

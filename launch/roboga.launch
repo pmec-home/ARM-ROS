@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find roboga_arm)/launch/demo.launch"></include>
+  
+  <!-- converter of JointState(/joint_states) Int16MultiArray(arm/cmd_position) -->
+  <node pkg="roboga_arm" name="converter_rosserial" type="converter_rosserial.py" output="screen"></node>
+</launch>
