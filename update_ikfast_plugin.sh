@@ -1,1 +1,1 @@
-rosrun moveit_kinematics create_ikfast_moveit_plugin.py test_robot arm roboga_arm /home/eduardo/athome/arm/catkin_ws/src/roboga_arm/src/test_robot_arm_ikfast_solver.cpp
+rosrun moveit_kinematics create_ikfast_moveit_plugin.py test_robot arm roboga_arm ~/roboga_ws/src/roboga_arm/src/test_robot_arm_ikfast_solver.cpp

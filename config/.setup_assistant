@@ -1,7 +1,7 @@
 moveit_setup_assistant_config:
   URDF:
     package: ""
-    relative_path: /home/eduardo/athome/arm/catkin_ws/src/roboga_arm/config/arm.urdf
+    relative_path: ~/roboga_ws/src/roboga_arm/config/arm.urdf
     xacro_args: "--inorder "
   SRDF:
     relative_path: test_robot.srdf
