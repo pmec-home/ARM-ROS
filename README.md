@@ -36,7 +36,16 @@ catkin config
 catkin build
 ```
 
-##This package 'roboga_arm'
+### Python dependencies
+```shell
+pip install rospkg
+pip install rospy
+pip install pyyaml
+pip install pyqt5
+pip install pyserial
+```
+
+## This package 'roboga_arm'
 ```shell
 cd ~/roboga_ws/src
 git clone https://gitlab.com/pequihome/roboga_arm
@@ -51,7 +60,7 @@ catkin build
 source ~/roboga_ws/devel/setup.bash
 ```
 
-##Base
+### Base
 The launch will open rviz with the model of the arm, and the topic needed for the format of message recived by the microcontroller
 ```shell
 roslaunch roboga_arm roboga.launch
@@ -61,14 +70,14 @@ If the model apears collapsed on ROS Melodic, try this:
 export LC_NUMERIC="en_US.UTF-8"
 ```
 
-## Ros serial
+### Ros serial
 In another terminal open the rosserial node to comunicate with the microcontroler   
 Example command if serial is connected on **/dev/ttyUSB0**
 ```shell
 rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=250000
 ```
 
-## Example pick and place
+### Example pick and place
 In another terminal :
 ```shell
 rosrun roboga_arm roboga_grasp.py
