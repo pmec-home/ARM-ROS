@@ -1,104 +1,65 @@
-<robot name="test_robot">
-  <link name="base_cylinder">
+<robot name="test_jorge">
+  <link name="00">
 	<visual>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/base_cylinder.stl" scale ="0.001 0.001 0.001"/>
+          <mesh filename="package://roboga_arm/meshes/00.stl" scale ="0.001 0.001 0.001"/>
          </geometry>
         </visual>
         <collision>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/base_cylinder.stl" scale ="0.001 0.001 0.001"/>
+          <mesh filename="package://roboga_arm/meshes/00.stl" scale ="0.001 0.001 0.001"/>
          </geometry>
         </collision>
   </link>
 
-  <link name="platform">
+  <link name="01">
 	<visual>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/top_plate.stl"/>
+          <mesh filename="package://roboga_arm/meshes/01.stl"/>
          </geometry>
         </visual>
         <collision>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/top_plate.stl"/>
+          <mesh filename="package://roboga_arm/meshes/01.stl"/>
          </geometry>
         </collision>
   </link>
 
-  <link name="lower_arm">
+  <link name="02">
 	<visual>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/lower_arm.stl"/>
+          <mesh filename="package://roboga_arm/meshes/02.stl"/>
          </geometry>
         </visual>
         <collision>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/lower_arm.stl"/>
+          <mesh filename="package://roboga_arm/meshes/02.stl"/>
          </geometry>
         </collision>
   </link>
 
-  <link name="upper_arm">
+  <link name="03">
 	<visual>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/top_arm.stl"/>
+          <mesh filename="package://roboga_arm/meshes/03.stl"/>
          </geometry>
         </visual>
         <collision>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/top_arm.stl"/>
+          <mesh filename="package://roboga_arm/meshes/03.stl"/>
          </geometry>
         </collision>
   </link>
 
-  <link name="wrist">
+  <link name="04">
 	<visual>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/wrist.stl"/>
+          <mesh filename="package://roboga_arm/meshes/04.stl"/>
          </geometry>
         </visual>
         <collision>
          <geometry>
-          <mesh filename="package://roboga_arm/meshes/wrist.stl"/>
-         </geometry>
-        </collision>
-  </link>
-
-  <link name="claw_base">
-	<visual>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawbase.stl"/>
-         </geometry>
-        </visual>
-        <collision>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawbase.stl"/>
-         </geometry>
-        </collision>
-  </link>
-
-  <link name="claw_l">
-	<visual>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawl.stl"/>
-         </geometry>
-        </visual>
-        <collision>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawl.stl"/>
-         </geometry>
-        </collision>
-  </link>
-
-  <link name="claw_r">
-	<visual>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawr.stl"/>
-         </geometry>
-        </visual>
-        <collision>
-         <geometry>
-          <mesh filename="package://roboga_arm/meshes/clawr.stl"/>
+          <mesh filename="package://roboga_arm/meshes/04.stl"/>
          </geometry>
         </collision>
   </link>
@@ -106,55 +67,32 @@
   <joint name="joint1" type="revolute">
     <axis xyz="0 0 1" />
     <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
-    <parent link="base_cylinder"/>
-    <child link="platform"/>
+    <parent link="00"/>
+    <child link="01"/>
   </joint>
 
   <joint name="joint2" type="revolute">
     <axis xyz="-1 0 0" />
     <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
     <origin xyz="0 0 0.093" rpy="0 0 0" />
-    <parent link="platform"/>
-    <child link="lower_arm"/>
+    <parent link="01"/>
+    <child link="02"/>
   </joint>
 
   <joint name="joint3" type="revolute">
     <axis xyz="1 0 0" />
     <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
     <origin xyz="0 0 0.121" rpy="0 0 0" />
-    <parent link="lower_arm"/>
-    <child link="upper_arm"/>
+    <parent link="02"/>
+    <child link="03"/>
   </joint>
 
   <joint name="joint4" type="revolute">
     <axis xyz="-1 0 0" />
     <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
     <origin xyz="0 0 0.112" rpy="0 0 0" />
-    <parent link="upper_arm"/>
-    <child link="wrist"/>
-  </joint>
-
-  <joint name="joint5" type="fixed">
-    <axis xyz="-1 0 0" />
-    <origin xyz="0 0 0.112" rpy="0 0 0" />
-    <parent link="wrist"/>
-    <child link="claw_base"/>
-  </joint>
-
-  <joint name="joint6" type="revolute">
-    <axis xyz="0 1 0" />
-    <limit effort="1000.0" lower="0.00" upper="1.50" velocity="1.0" />
-    <origin xyz="-0.027 0 0" rpy="0 0 0" />
-    <parent link="claw_base"/>
-    <child link="claw_l"/>
-  </joint>
-
-  <joint name="joint7" type="revolute">
-    <axis xyz="0 -1 0" />
-    <limit effort="1000.0" lower="0.00" upper="1.50" velocity="1.0" />
-    <origin xyz="-0.027 0 0" rpy="0 0 0" />
-    <parent link="claw_base"/>
-    <child link="claw_r"/>
+    <parent link="03"/>
+    <child link="04"/>
   </joint>
 
 </robot>
